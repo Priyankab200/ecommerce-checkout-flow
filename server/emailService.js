@@ -1,19 +1,18 @@
-// server/emailService.js
 import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
   port: 587,
   auth: {
-    user: "091bd1e75ebc03",     // ✅ Mailtrap Username
-    pass: "3e3e410a4c76bf"      // ✅ Mailtrap Password
+    user: "091bd1e75ebc03",    
+    pass: "3e3e410a4c76bf"      
   }
 });
 
 export const sendConfirmationEmail = async (order) => {
   const mailOptions = {
     from: '"eCommerce App" <no-reply@ecommerce.com>',
-    to: order.customer.email,  // ✅ fix
+    to: order.customer.email,  
     subject: "Order Confirmation",
     html: `
       <h2>Order #${order._id} Confirmed</h2>
