@@ -7,7 +7,7 @@ const product = {
   description: 'High quality wireless headphones with noise cancellation.',
   price: 2999,
   variants: ['Black', 'Pink', 'White'],
-  image: '/images/headphones.jpeg', // ✅ फक्त एक image use केली
+  image: '/images/headphones.jpeg', 
 };
 
 export default function LandingPage() {
