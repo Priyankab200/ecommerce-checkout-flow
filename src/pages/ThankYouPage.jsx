@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import '../index.css'; // ✅ Fix केलेला import path
+import '../index.css'; 
 
 function ThankYouPage() {
   const location = useLocation();
