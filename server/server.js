@@ -1,11 +1,11 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import dotenv from 'dotenv'; // ✅ .env file साठी
+import dotenv from 'dotenv'; // ✅ .env file 
 import { sendConfirmationEmail } from './emailService.js';
 import Order from './models/Order.js';
 
-dotenv.config(); // ✅ .env variables लोड करतो
+dotenv.config(); // ✅ .env variables 
 
 const app = express();
 app.use(cors());
@@ -16,7 +16,7 @@ app.post('/api/orders', async (req, res) => {
     const newOrder = new Order(req.body);
     await newOrder.save();
 
-    // ✅ Email पाठवायचा call करताना complete object पास कर:
+
     await sendConfirmationEmail(newOrder);
 
     res.status(201).json(newOrder);
@@ -26,7 +26,7 @@ app.post('/api/orders', async (req, res) => {
   }
 });
 
-// ✅ MONGO_URI & PORT .env मधून घे
+
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("✅ MongoDB Connected");
